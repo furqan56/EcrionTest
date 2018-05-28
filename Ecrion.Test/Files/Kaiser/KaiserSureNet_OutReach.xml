@@ -1,0 +1,71 @@
+<FulfillmentRequest UniqueId="94f5f77c-f2c2-4ce5-9194-5352922c167e">
+  <Estimated_Mail_Date>5/17/2018</Estimated_Mail_Date>
+  <Kit KitName="EstimatedMailDateforKaiserTemplate">
+    <SubKit SubKitName="EstimatedMailDateforKaiserTemplate-SubKit1">
+      <IncludedComponents>
+        <Component ComponentID="ab38af02-4297-451c-a86c-b04f30bb6f5a" Name="EstimatedMailDateComponentforKaiserTemplate" DocumentPath="Kaiser Permanente Outreach\Components\EstimatedMailDateComponentforKaiser_f6bdc149dc4e4018aba5ac2d9da5eef5_Art.pdf" ComponentType="VariableDataTemplate" ProductionFileProcessingInstruction="DoNotSplitPrintFiles" ArtProof="False" Template="KP:KP_B12_BS_PROD_TEST.xfd" Type="Ecrion">
+          <PrintBranding>1</PrintBranding>
+          <PrintFileLocation></PrintFileLocation>
+        </Component>
+      </IncludedComponents>
+      <Members>
+        <Member>
+          <MemberID>000000123401</MemberID>
+          <MemberGUID>0f1c9933-8f1d-491f-9509-877ca6e81422</MemberGUID>
+          <Address>
+            <FirstName>Letter 1</FirstName>
+            <Middle />
+            <LastName>Sample 1</LastName>
+            <Latitude></Latitude>
+            <Longitude></Longitude>
+            <Address1>1243 Any Street</Address1>
+            <Address2 />
+            <City>Antelope Valley</City>
+            <State>CA</State>
+            <ZIP>92324</ZIP>
+          </Address>
+          <VariableData>
+            <LIST_RUN_DATE>07/28/2017</LIST_RUN_DATE>
+            <PROJECT_CODE>709</PROJECT_CODE>
+            <WWYY_CODE>3016</WWYY_CODE>
+            <KPMC_ID></KPMC_ID>
+            <KPNS_ID></KPNS_ID>
+            <MESSAGE_ID></MESSAGE_ID>
+            <EMAIL_ID></EMAIL_ID>
+            <SMS_ID></SMS_ID>
+            <BRANDING_CD>20</BRANDING_CD>
+            <REGION_CD>CS</REGION_CD>
+            <AREA_CODE_A>AV*-S*</AREA_CODE_A>
+            <AREA_VAR_CODE>ANT</AREA_VAR_CODE>
+            <AREA_CODE_N></AREA_CODE_N>
+            <AREA_DESC>Antelope Valley</AREA_DESC>
+            <DAY_PHONE_NUMBER>9512950577</DAY_PHONE_NUMBER>
+            <NIGHT_PHONE_NUMBER>9098255813</NIGHT_PHONE_NUMBER>
+            <CELL_PHONE_NUMBER></CELL_PHONE_NUMBER>
+            <GENDER>F</GENDER>
+            <DOB>05/11/1948</DOB>
+            <AGE>68</AGE>
+            <LANGUAGE_SPOKEN_DE>ENGLISH</LANGUAGE_SPOKEN_DE>
+            <LANGUAGE_WRITTEN_DE>ENGLISH</LANGUAGE_WRITTEN_DE>
+            <PCP_CODE></PCP_CODE>
+            <CPM_CODE></CPM_CODE>
+            <PCP_F_NAME>DOCTOR</PCP_F_NAME>
+            <PCP_M_NAME></PCP_M_NAME>
+            <PCP_L_NAME>SAMPLE</PCP_L_NAME>
+            <PCP_TITLE>M.D.</PCP_TITLE>
+            <PCP_LOC>151</PCP_LOC>
+            <TOUCH_TYPE_1>LETTER</TOUCH_TYPE_1>
+            <TOUCH_TYPE_2></TOUCH_TYPE_2>
+            <TOUCH_TYPE_3></TOUCH_TYPE_3>
+            <KP_ORG_FL>Y</KP_ORG_FL>
+            <DEPLOYMENT_ID>TEST</DEPLOYMENT_ID>
+            <PCP_NUID>TEST</PCP_NUID>
+          </VariableData>
+          <TotalSheets ComponentId="ab38af02-4297-451c-a86c-b04f30bb6f5a">2</TotalSheets>
+          <BS_ID>2326521</BS_ID>
+          <SuperCode />
+        </Member>
+      </Members>
+    </SubKit>
+  </Kit>
+</FulfillmentRequest>
