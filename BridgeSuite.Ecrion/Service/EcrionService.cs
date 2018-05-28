@@ -8,6 +8,10 @@ namespace BridgeSuite.Ecrion.Service
     {
         private readonly IEcrionServiceClient _ecrionServiceClient;
 
+        public EcrionService()
+        {
+            _ecrionServiceClient = new EcrionServiceClient();
+        }
         public EcrionService(IEcrionServiceClient ecrionServiceClient)
         {
             if (ecrionServiceClient == null) throw new ArgumentNullException(nameof(ecrionServiceClient));
@@ -25,7 +29,7 @@ namespace BridgeSuite.Ecrion.Service
                 },
                 Parameters = new RenderingParameters
                 {
-                    OutputFormat = OutputFormat.PDF,
+                    OutputFormat = OutputFormat.HTML,
                     PDFOutputSettings = new PDFOutputSettings { ImageCompression = PDFImageCompression.FLAT },
                     Template = new ServerDocumentTemplate { ID = template }
                 }
@@ -47,7 +51,7 @@ namespace BridgeSuite.Ecrion.Service
                     },
                     Parameters = new RenderingParameters
                     {
-                        OutputFormat = OutputFormat.PDF,
+                        OutputFormat = OutputFormat.HTML,
                         PDFOutputSettings = new PDFOutputSettings { ImageCompression = PDFImageCompression.FLAT },
                         Template = new ServerDocumentTemplate { ID = template }
                     }
