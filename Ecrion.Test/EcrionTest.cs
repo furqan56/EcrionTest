@@ -17,6 +17,14 @@ namespace Ecrion.Test
         {
             _ecrionService = new EcrionService();
         }
+
+        [TestInitialize]
+        public void SetUp()
+        {
+            if (!Directory.Exists("..\\..\\Files\\Temp"))
+                Directory.CreateDirectory("..\\..\\Files\\Temp");
+        }
+
         [TestMethod]
         public void TestMethod1()
         {
@@ -31,6 +39,12 @@ namespace Ecrion.Test
             var filePath = $"..\\..\\Files\\Temp\\{Guid.NewGuid():N}.html";
             File.WriteAllBytes(filePath, htmlbytes);
             return filePath;
+        }
+
+        [TestCleanup]
+        public void TearDown()
+        {
+          Directory.Delete("..\\..\\Files\\Temp",true);  
         }
     }
 }
