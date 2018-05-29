@@ -28,11 +28,11 @@ namespace Ecrion.Test
         [TestMethod]
         public void TestMethod1()
         {
-            var htmlFilePath =RenderHtml("..\\..\\Files\\Kaiser\\KaiserSureNet_OutReach.xml", "KP:KP_B12_BS_PROD.xfd");
-            var page =new WebClient().GetHtmlPage(htmlFilePath);
+            var htmlFilePath = RenderHtml("..\\..\\Files\\Kaiser\\KaiserSureNet_OutReach.xml", "KP:KP_B12_BS_PROD.xfd");
+            var page = new WebClient().GetPage(htmlFilePath);
         }
 
-        private string RenderHtml(string xmlPath,string template)
+        private string RenderHtml(string xmlPath, string template)
         {
             var xml = File.ReadAllText(xmlPath);
             var htmlbytes = _ecrionService.Render(xml, template);
@@ -44,7 +44,7 @@ namespace Ecrion.Test
         [TestCleanup]
         public void TearDown()
         {
-          Directory.Delete("..\\..\\Files\\Temp",true);  
+            Directory.Delete("..\\..\\Files\\Temp", true);
         }
     }
 }
