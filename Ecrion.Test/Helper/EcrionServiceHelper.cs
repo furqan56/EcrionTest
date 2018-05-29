@@ -11,8 +11,7 @@ namespace Ecrion.Test.Helper
     {
         private static Uri BaseUri => new Uri(ConfigurationManager.AppSettings["EcrionWebServiceURI"]);
 
-        public static Uri PdfServiceUri =>new Uri(BaseUri,"/ecrion/pdf/render");
-        public static Uri HtmlServiceUri =>new Uri(BaseUri,"/ecrion/html/render");
-
+        public static Uri PdfServiceUri => new Uri(BaseUri, "/ecrion/renderpdf");
+        public static Uri HtmlServiceUri => new Uri(BaseUri, "/ecrion/renderhtml");
     }
 }

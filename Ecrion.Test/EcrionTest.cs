@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using NHtmlUnit;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.Extensions;
 
 namespace Ecrion.Test
 {
@@ -25,11 +26,10 @@ namespace Ecrion.Test
         [TestInitialize]
         public void SetUp()
         {
-            if (!Directory.Exists("..\\..\\Files\\Temp"))
-                Directory.CreateDirectory("..\\..\\Files\\Temp");
             ChromeOptions options = new ChromeOptions();
-            options.AddArgument("--headless");
+            //options.AddArgument("--headless");
             driver = new ChromeDriver(options);
+            
         }
 
         [TestMethod]
@@ -46,26 +46,17 @@ namespace Ecrion.Test
         [TestMethod]
         public void VerifyHeaderNameInPdf()
         {
+            var xml = File.ReadAllText("..\\..\\Files\\Kaiser\\KaiserSureNet_OutReach.xml");
             var value = driver.FindElement(By.ClassName("td1"));
             Assert.AreEqual(value.Text, "FORMULARY CHANGE NOTICE");
-            driver.Navigate().GoToUrl("file:///C:/Users/CLICK%20CHAIN/Downloads/bcl_2031189454.htm");
         }
 
-
-        private string RenderHtml(string xmlPath, string template)
-        {
-            var xml = File.ReadAllText(xmlPath);
-            var htmlbytes = _ecrionService.Render(xml, template);
-            var filePath = $"..\\..\\Files\\Temp\\{Guid.NewGuid():N}.html";
-            File.WriteAllBytes(filePath, htmlbytes);
-            return filePath;
-        }
 
         [TestCleanup]
         public void TearDown()
         {
-            Directory.Delete("..\\..\\Files\\Temp", true);
             driver.Close();
         }
+
     }
 }

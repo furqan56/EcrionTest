@@ -7,7 +7,7 @@ using EcrionTest.WebUI.Models;
 
 namespace EcrionTest.WebUI.Controllers
 {
-    [RoutePrefix("ecrion")]
+    [RoutePrefix("ecrion"),ValidateInput(false)]
     public class EcrionController : Controller
     {
         private EcrionService _ecrionService;
