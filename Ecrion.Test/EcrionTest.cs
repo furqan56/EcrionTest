@@ -50,19 +50,15 @@ namespace Ecrion.Test
         [TestMethod]
         public void VerifyHeaderNameInPdf()
         {
-            var xml = ReadXml("..\\..\\Files\\Rubidoux\\final_notice.xml");
+            var xml = EcrionServiceHelper.ReadXml("..\\..\\Files\\Rubidoux\\final_notice.xml");
             driver.Navigate().GoToUrl(EcrionServiceHelper.BaseUri);
             driver.FindElement(By.Name("TemplateName")).SendKeys("Rubidoux_Final_Notice:final_notice.epr");
             Clipboard.SetText(xml);
-            driver.FindElement(By.Name("Xml")).SendKeys(Keys.Control+"v");
+            driver.FindElement(By.Name("Xml")).SendKeys(Keys.Control + "v");
             driver.FindElement(By.Id("submitButton")).Click();
         }
 
-        private string ReadXml(string path)
-        {
-            var document = XDocument.Parse(File.ReadAllText(path));
-            return document.ToString(SaveOptions.DisableFormatting);
-        }
+        
 
 
         [TestCleanup]
