@@ -38,7 +38,8 @@ namespace BridgeSuite.Ecrion.Service
             return response.RenderResult;
 
         }
-        public byte[] Render(string xml, string template)
+
+        public byte[] Render(string xml, string template, OutputFormat outputFormat)
         {
             try
             {
@@ -51,7 +52,7 @@ namespace BridgeSuite.Ecrion.Service
                     },
                     Parameters = new RenderingParameters
                     {
-                        OutputFormat = OutputFormat.HTML,
+                        OutputFormat = outputFormat,
                         PDFOutputSettings = new PDFOutputSettings { ImageCompression = PDFImageCompression.FLAT },
                         Template = new ServerDocumentTemplate { ID = template }
                     }
@@ -63,6 +64,11 @@ namespace BridgeSuite.Ecrion.Service
             {
                 throw ex;
             }
+        }
+
+        public byte[] Render(string xml, string template)
+        {
+            return Render(xml, template, OutputFormat.PDF);
         }
     }
 }

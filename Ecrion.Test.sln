@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecrion.Test", "Ecrion.Test\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BridgeSuite.Ecrion", "BridgeSuite.Ecrion\BridgeSuite.Ecrion.csproj", "{87067009-7149-4191-A2C4-780735C9A1FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcrionTest.WebUI", "EcrionTest.WebUI\EcrionTest.WebUI.csproj", "{C7C44D50-FF06-45D9-9474-9384934B4499}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{87067009-7149-4191-A2C4-780735C9A1FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87067009-7149-4191-A2C4-780735C9A1FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87067009-7149-4191-A2C4-780735C9A1FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7C44D50-FF06-45D9-9474-9384934B4499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7C44D50-FF06-45D9-9474-9384934B4499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7C44D50-FF06-45D9-9474-9384934B4499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7C44D50-FF06-45D9-9474-9384934B4499}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

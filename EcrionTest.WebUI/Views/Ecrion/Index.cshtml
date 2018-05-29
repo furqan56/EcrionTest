@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]>         <html class="ie8"> <![endif]-->
+<!--[if IE 9]>         <html class="ie9 gt-ie8"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="gt-ie8 gt-ie9 not-ie">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h3 class="text-center">Ecrion Test Service</h3>
+        <br/>
+        <br/>
+        <div class="row col-sm-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Action</th>
+                        <th>URI</th>
+                        <th>Parameter1</th>
+                        <th>Parameter2</th>
+                        <th>Return Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>POST</td>
+                        <td>/ecrion/pdf/render</td>
+                        <td>XML:String</td>
+                        <td>TemplateName:String</td>
+                        <td>PDF File</td>
+                    </tr>
+                    <tr>
+                        <td>POST</td>
+                        <td>/ecrion/html/render</td>
+                        <td>XML:String</td>
+                        <td>TemplateName:String</td>
+                        <td>Html</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

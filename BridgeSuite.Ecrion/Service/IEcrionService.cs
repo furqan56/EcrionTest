@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using BridgeSuite.Ecrion.ObjectModel;
 
 namespace BridgeSuite.Ecrion.Service
 {
@@ -6,5 +7,6 @@ namespace BridgeSuite.Ecrion.Service
     {
         Task<byte[]> RenderAsync(string xml, string template);
         byte[] Render(string xml, string template);
+        byte[] Render(string xml, string template, OutputFormat outputFormat);
     }
 }
