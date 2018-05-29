@@ -56,6 +56,14 @@ namespace Ecrion.Test
             Clipboard.SetText(xml);
             driver.FindElement(By.Name("Xml")).SendKeys(Keys.Control + "v");
             driver.FindElement(By.Id("submitButton")).Click();
+            var billingValue = driver.FindElement(By.Id("5296062")).Text;
+            var accountNumber = driver.FindElement(By.Id("5452081")).Text;
+            var lateChargesValue = driver.FindElement(By.Id("4972147")).Text;
+            var dueDate = driver.FindElement(By.Id("4647461")).Text;
+            Assert.AreEqual("200.46", billingValue);
+            Assert.AreEqual("10100300", accountNumber);
+            Assert.AreEqual("1.00", lateChargesValue);
+            Assert.AreEqual("12/13/2016", dueDate );
         }
 
         
