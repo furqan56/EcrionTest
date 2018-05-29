@@ -1,7 +1,10 @@
 ﻿using System;
 using System.IO;
 using BridgeSuite.Ecrion.Service;
+using Ecrion.Test.Helper;
+using java.net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 using NHtmlUnit;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -27,14 +30,16 @@ namespace Ecrion.Test
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("--headless");
             driver = new ChromeDriver(options);
-            driver.Navigate().GoToUrl("file:///C:/Users/CLICK%20CHAIN/Downloads/bcl_2031189454.htm");
         }
 
         [TestMethod]
         public void TestMethod1()
         {
-            var htmlFilePath = RenderHtml("..\\..\\Files\\Kaiser\\KaiserSureNet_OutReach.xml", "KP:KP_B12_BS_PROD.xfd");
-            var page = new WebClient().GetHtmlPage(htmlFilePath);
+            var xml =File.ReadAllText("..\\..\\Files\\Kaiser\\KaiserSureNet_OutReach.xml");
+            var request = new WebRequest(new URL(EcrionServiceHelper.HtmlServiceUri.ToString()),new HttpMethod(com.gargoylesoftware.htmlunit.HttpMethod.POST));
+            request.SetAdditionalHeader("Content-Type", "application/json");
+            request.RequestBody = JsonConvert.SerializeObject(new{xml= xml ,templateName= "KP:KP_B12_BS_PROD.xfd" });
+            var page = new WebClient().GetPage(request);
         }
 
 
@@ -43,35 +48,9 @@ namespace Ecrion.Test
         {
             var value = driver.FindElement(By.ClassName("td1"));
             Assert.AreEqual(value.Text, "FORMULARY CHANGE NOTICE");
+            driver.Navigate().GoToUrl("file:///C:/Users/CLICK%20CHAIN/Downloads/bcl_2031189454.htm");
         }
 
-        [TestMethod]
-        public void VerifyDateInPdf()
-        {
-            var value = driver.FindElement(By.ClassName("td0"));
-            Assert.AreEqual(value.Text, "December 1, 2017");
-        }
-
-        [TestMethod]
-        public void VerifyFirstNameInPdf()
-        {
-            var value = driver.FindElement(By.ClassName("td0"));
-            Assert.AreEqual(value.Text, "December 1, 2017");
-        }
-
-        [TestMethod]
-        public void VerifyLastNameInPdf()
-        {
-            var value = driver.FindElement(By.ClassName("td0"));
-            Assert.AreEqual(value.Text, "December 1, 2017");
-        }
-
-        [TestMethod]
-        public void VerifyAddress1InPdf()
-        {
-            var value = driver.FindElement(By.ClassName("td0"));
-            Assert.AreEqual(value.Text, "December 1, 2017");
-        }
 
         private string RenderHtml(string xmlPath, string template)
         {

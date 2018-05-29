@@ -22,14 +22,14 @@ namespace EcrionTest.WebUI.Controllers
             return View();
         }
 
-        [HttpPost,Route("pdf/render")]
+        [HttpPost]
         public ActionResult RenderPDF(RenderingRequest request)
         {
             var pdfBytes= _ecrionService.Render(request.Xml, request.TemplateName,OutputFormat.PDF);
             return File(pdfBytes,"application/pdf",$"{Guid.NewGuid():N}.pdf");
         }
 
-        [HttpPost, Route("html/render")]
+        [HttpPost]
         public ActionResult RenderHtml(RenderingRequest request)
         {
             var htmlBYtes = _ecrionService.Render(request.Xml, request.TemplateName, OutputFormat.HTML);
