@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FulfillmentRequest FulfillmentId="94861059-440f-4739-a2f1-e25bd710979c">
-	<Component Template="Navitus:Nav_CTL_Staging.xfd"/>
-	<Kit KitName="abc123">
-		<SubKit SubKitName="abc123-Subkit1">
-			<IncludedComponents>
-				<Component ComponentID="fa44d3d4-1054-480f-a4dc-8855d6878f20" DocumentPath="/Files/SupportingDocs/20160118035552.jpg" Name="VDT1" Merged="Ecrion" Template="Ecrion" Type="Ecrion" />
-			</IncludedComponents>
-			<ExcludedComponents>
-				<Component ComponentID="b69d0bdc-43ea-4305-856b-57d095e6b572" Name="FulfillmentRequestSchema.xsd" Merged="Ecrion" Template="Ecrion" Type="Ecrion" />
-			</ExcludedComponents>
-			<Members>
-  <Member>
-    <MemberID>10100300</MemberID>
-    <Address>
-      <FirstName>BRENDA GUNDER</FirstName>
-      <Middle></Middle>
-      <LastName></LastName>
-      <Address1>5221 36TH ST</Address1>
-      <Address2></Address2>
-      <City>RUBIDOUX</City>
-      <State>CA</State>
-      <Zip>92509</Zip>
-      <Latitude></Latitude>
-      <Longitude></Longitude>
-    </Address>
-    <VariableData>
-     <account>10900700</account>
-	 <name>MARIA MONTOLFO</name>
-	 <mail_address_1>3096 AVALON ST</mail_address_1>
-	 <mail_address_2></mail_address_2>
-	 <mail_city>RUBIDOUX</mail_city>
-	 <mail_province>CA</mail_province>
-	 <mail_zip>92509</mail_zip>
-	 <service_adress>3096 AVALON ST</service_adress>
-	 <notice_date>05/09/2017</notice_date>
-	 <overdue>0.00</overdue>
-	 <late_charge>1.00</late_charge>
-	 <amount_due>200.46</amount_due>
-	 <disconnect_date>12/13/2016</disconnect_date>
-    </VariableData>
-  </Member>
-</Members>
+  <Component Template="Navitus:Nav_CTL_Staging.xfd"/>
+  <Kit KitName="abc123">
+    <SubKit SubKitName="abc123-Subkit1">
+      <IncludedComponents>
+        <Component ComponentID="fa44d3d4-1054-480f-a4dc-8855d6878f20" DocumentPath="/Files/SupportingDocs/20160118035552.jpg" Name="VDT1" Merged="Ecrion" Template="Ecrion" Type="Ecrion" />
+      </IncludedComponents>
+      <ExcludedComponents>
+        <Component ComponentID="b69d0bdc-43ea-4305-856b-57d095e6b572" Name="FulfillmentRequestSchema.xsd" Merged="Ecrion" Template="Ecrion" Type="Ecrion" />
+      </ExcludedComponents>
+      <Members>
+        <Member>
+          <MemberID>10100300</MemberID>
+          <Address>
+            <FirstName>BRENDA GUNDER</FirstName>
+            <Middle></Middle>
+            <LastName></LastName>
+            <Address1>5221 36TH ST</Address1>
+            <Address2></Address2>
+            <City>RUBIDOUX</City>
+            <State>CA</State>
+            <Zip>92509</Zip>
+            <Latitude></Latitude>
+            <Longitude></Longitude>
+          </Address>
+          <VariableData>
+            <account>10900700</account>
+            <name>MARIA MONTOLFO</name>
+            <mail_address_1>3096 AVALON ST</mail_address_1>
+            <mail_address_2></mail_address_2>
+            <mail_city>RUBIDOUX</mail_city>
+            <mail_province>CA</mail_province>
+            <mail_zip>92509</mail_zip>
+            <service_adress>3096 AVALON ST</service_adress>
+            <notice_date>05/09/2017</notice_date>
+            <overdue>0.00</overdue>
+            <late_charge>1.00</late_charge>
+            <amount_due>200.46</amount_due>
+            <disconnect_date>05/31/2018</disconnect_date>
+          </VariableData>
+        </Member>
+      </Members>
 
-		</SubKit>
-	</Kit>
+    </SubKit>
+  </Kit>
 </FulfillmentRequest>
