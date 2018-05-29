@@ -201,6 +201,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Files\Kaiser\KaiserSureNet_OutReach.xml" />
+    <Content Include="Files\Rubidoux\final_notice.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BridgeSuite.Ecrion\BridgeSuite.Ecrion.csproj">
