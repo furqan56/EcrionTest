@@ -16,6 +16,12 @@ namespace EcrionTest.WebUI.Controllers
         {
             _ecrionService = new EcrionService();
         }
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         [HttpPost,Route("pdf/render")]
         public ActionResult RenderPDF(RenderingRequest request)
         {
