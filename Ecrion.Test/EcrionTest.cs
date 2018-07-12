@@ -1,17 +1,14 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using BridgeSuite.Ecrion.Service;
 using Ecrion.Test.Helper;
+using FluentAssertions;
 using java.net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using NHtmlUnit;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.Extensions;
 using Keys = OpenQA.Selenium.Keys;
 
 namespace Ecrion.Test
@@ -48,7 +45,20 @@ namespace Ecrion.Test
 
 
         [TestMethod]
-        public void VerifyHeaderNameInPdf()
+        public void VerifyKaiserTemplate()
+        {
+            var xml = EcrionServiceHelper.ReadXml("..\\..\\Files\\Kaiser\\KaiserSureNet_OutReach.xml");
+            driver.Navigate().GoToUrl(EcrionServiceHelper.BaseUri);
+            driver.FindElement(By.Name("TemplateName")).SendKeys("KP:KP_B12_BS_PROD.xfd");
+            Clipboard.SetText(xml);
+            driver.FindElement(By.Name("Xml")).SendKeys(Keys.Control + "v");
+            driver.FindElement(By.Id("submitButton")).Click();
+            
+        }
+
+
+        [TestMethod]
+        public void VerifyFinalNoticeForCityOfRubidoux()
         {
             var xml = EcrionServiceHelper.ReadXml("..\\..\\Files\\Rubidoux\\final_notice.xml");
             driver.Navigate().GoToUrl(EcrionServiceHelper.BaseUri);
@@ -60,14 +70,14 @@ namespace Ecrion.Test
             var accountNumber = driver.FindElement(By.Id("5452081")).Text;
             var lateChargesValue = driver.FindElement(By.Id("4972147")).Text;
             var dueDate = driver.FindElement(By.Id("4647461")).Text;
+
+            dueDate.Should().Be("05/31/2018","As Per the Business Rule template should add 3 days to the date received");
+
             Assert.AreEqual("200.46", billingValue);
             Assert.AreEqual("10100300", accountNumber);
             Assert.AreEqual("1.00", lateChargesValue);
-            Assert.AreEqual("12/13/2016", dueDate );
+            Assert.AreEqual("05/31/2018", dueDate );
         }
-
-        
-
 
         [TestCleanup]
         public void TearDown()
