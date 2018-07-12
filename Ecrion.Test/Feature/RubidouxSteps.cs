@@ -1,4 +1,5 @@
-﻿using Ecrion.Test.Helper;
+﻿using System.Windows.Forms;
+using Ecrion.Test.Helper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -28,7 +29,7 @@ namespace Ecrion.Test.Feature
             var xml = EcrionServiceHelper.ReadXml(".\\..\\Ecrion.Test\\Files\\Rubidoux\\final_notice.xml");
             _driver.Navigate().GoToUrl(EcrionServiceHelper.BaseUri);
             _driver.FindElement(By.Name("TemplateName")).SendKeys("Rubidoux_Final_Notice:final_notice.epr");
-            //Clipboard.SetText(xml);
+            Clipboard.SetText(xml);
             //_driver.FindElement(By.Name("Xml")).SendKeys(Keys.Control + "v");
             _driver.FindElement(By.Name("Xml")).SendKeys(xml);
             _driver.FindElement(By.Id("submitButton")).Click();
