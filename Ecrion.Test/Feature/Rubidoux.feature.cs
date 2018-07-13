@@ -70,7 +70,7 @@ namespace Ecrion.Test.Feature
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rubidoux Final Template", new string[] {
                         "mytag"});
 #line 7
-this.ScenarioSetup(scenarioInfo);
+ this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.Given("the XML with Member billing information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9

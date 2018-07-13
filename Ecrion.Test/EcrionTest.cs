@@ -70,6 +70,7 @@ namespace Ecrion.Test
             var accountNumber = driver.FindElement(By.Id("5452081")).Text;
             var lateChargesValue = driver.FindElement(By.Id("4972147")).Text;
             var dueDate = driver.FindElement(By.Id("4647461")).Text;
+            var city = driver.FindElement(By.Id("4654777")).Text;
 
             dueDate.Should().Be("05/31/2018","As Per the Business Rule template should add 3 days to the date received");
 
@@ -77,6 +78,7 @@ namespace Ecrion.Test
             Assert.AreEqual("10100300", accountNumber);
             Assert.AreEqual("1.00", lateChargesValue);
             Assert.AreEqual("05/31/2018", dueDate );
+            Assert.AreEqual("RUBIDOUX", city );
         }
 
         [TestCleanup]
